@@ -1,0 +1,54 @@
+<div class="auth-container">
+  <div *ngIf="isLogin">
+    <!-- Formulário de Login -->
+    <form (ngSubmit)="onLogin()">
+      <h2>Login</h2>
+      <label for="login-email">Email:</label>
+      <input type="email" id="login-email" [(ngModel)]="loginData.email" name="email" placeholder="Digite o seu email" required>
+      
+      <label for="login-password">Senha:</label>
+      <input type="password" id="login-password" [(ngModel)]="loginData.password" name="password" placeholder="Digite sua senha" required>
+      
+      <button type="submit" class="cta-button">Login</button>
+    </form>
+  </div>
+
+  <div *ngIf="!isLogin">
+    <!-- Formulário de Registro -->
+    <form (ngSubmit)="onRegister()">
+      <h2>Registrar</h2>
+      <label for="register-name">Nome:</label>
+      <input type="text" id="register-name" [(ngModel)]="registerData.name" name="name" placeholder="Digite o seu nome completo" required>
+      
+      <label for="register-email">Email:</label>
+      <input type="email" id="register-email" [(ngModel)]="registerData.email" name="email" placeholder="Digite o seu email" required>
+      
+      <label for="register-password">Senha:</label>
+      <input type="password" id="register-password" [(ngModel)]="registerData.password" name="password" placeholder="Crie uma senha" required>
+      
+      <label for="register-phone">Telefone:</label>
+      <input type="text" id="register-phone" [(ngModel)]="registerData.phone" name="phone" placeholder="Digite o seu telefone">
+
+      <!-- Checkboxes para Termos e Publicidade -->
+      <div class="checkbox-group-wrapper">
+        <div class="checkbox-container">
+          <input type="checkbox" id="agreedToTerms" [(ngModel)]="registerData.agreedToTermsAndConditions" name="agreedToTermsAndConditions" required>
+          <label for="agreedToTerms">Concordo com os Termos e Condições</label>
+        </div>
+
+        <div class="checkbox-container">
+          <input type="checkbox" id="consentForAdvertising" [(ngModel)]="registerData.consentForAdvertising" name="consentForAdvertising">
+          <label for="consentForAdvertising">Consinto em receber publicidade</label>
+        </div>
+      </div>
+      
+      <button type="submit" class="cta-button">Registrar</button>
+    </form>
+  </div>
+  <button class="toggle-form-btn" (click)="toggleForm()">
+    {{ isLogin ? 'Ir para Registro' : 'Ir para Login' }}
+  </button>
+
+  <!-- Mensagem de erro -->
+  <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+</div>

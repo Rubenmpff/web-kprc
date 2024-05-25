@@ -1,0 +1,27 @@
+<header [ngClass]="{'fixed-navbar': navbarFixed}">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-3 col-sm-3 col-3">
+        <div class="logo" (click)="navigateTo('/')">
+          <img src="assets/krpc_logo.png" class="logo" alt="Logo">
+        </div>
+      </div>
+      <div class="col-md-9 col-sm-9 col-9 text-end">
+        <div class="menu-icon" (click)="toggleMenu()">
+          <i class="{{menu_icon}}"></i>
+        </div>
+        <div class="desktop_menu" [class.mobile_menu]="menuValue">
+          <ul>
+            <li (click)="navigateTo('/')">Home</li>
+            <li (click)="navigateTo('/sobre')">Sobre Nós</li>
+            <li (click)="navigateTo('/portfolio')">Portfólio</li>
+            <li (click)="navigateTo('/contato')">Contactos</li>
+            <li *ngIf="isLoggedIn$ | async" (click)="navigateTo('/perfil')">Perfil</li>                        
+            <li *ngIf="!(isLoggedIn$ | async)" (click)="navigateTo('/login')">Iniciar Sessão / Registar</li>
+            <li *ngIf="isLoggedIn$ | async" (click)="logout()">Logout</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

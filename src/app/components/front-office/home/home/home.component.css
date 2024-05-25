@@ -1,0 +1,123 @@
+.home-banner {
+  width: 100%;
+  height: 100vh;
+  background: url('/assets/FundoDoSite.jpg') no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  margin-top: 70px;
+}
+
+.banner-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.banner-content h1 {
+  color: #333;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.banner-content p {
+  color: #333;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.cta-button {
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  background-color: #8A7E66;
+  background-image: linear-gradient(45deg, #e6b38380 0%, #916523 100%);
+  color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  outline: none;
+}
+
+.cta-button:hover, .cta-button:focus {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  background-image: linear-gradient(45deg, #8A7E66 0%, #473b22 100%);
+}
+
+.cta-button:active {
+  transform: translateY(1px);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsividade */
+@media screen and (max-width: 768px) {
+  .banner-content {
+    padding: 20px;
+  }
+
+  .banner-content h1 {
+    font-size: 1.5rem;
+  }
+
+  .banner-content p {
+    font-size: 0.8rem;
+  }
+
+  .cta-button {
+    font-size: 0.8rem;
+    padding: 8px 16px;
+  }
+}
+
+/* Estilo da seção de informações */
+.info-section {
+  display: flex;
+  justify-content: space-around;
+  padding: 50px 0;
+  background: #f9f9f9;
+}
+
+.info-box {
+  width: 30%;
+  padding: 20px;
+  text-align: center;
+  background: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.info-box h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.info-box p {
+  font-size: 1rem;
+  color: #666;
+}
+
+@media screen and (max-width: 768px) {
+  .info-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .info-box {
+    width: 80%;
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .info-box {
+    width: 45%;
+  }
+}
